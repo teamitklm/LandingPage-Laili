@@ -1,5 +1,5 @@
 /* Laili Brand mobile frame 104:532, calc(412 * var(--mobile-unit)) reference width.
-   Pixel dimensions are converted to a viewport-relative unit by the build helper. */
+   Pixel dimensions are converted to a viewport-relative unit by the build helper. */ 
 @media (max-width: 760px) {
   :root {
     --mobile-unit: calc(100vw / 412);
