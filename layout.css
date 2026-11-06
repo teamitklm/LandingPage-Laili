@@ -327,6 +327,9 @@ main {
 #social [data-node-id="10:49"] {
   font-size: 70px;
 }
+#pillars [data-node-id="1:85"] img {
+  transform: rotate(90deg);
+}
 #social [data-node-id="1:139"] {
   font-size: 50px;
 }
