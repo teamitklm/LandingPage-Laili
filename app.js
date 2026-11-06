@@ -80,3 +80,13 @@ navigation
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
 });
+
+// The hanging strings follow the same horizontal scroll as their photos.
+const pillarTrack = document.querySelector('.pillar-grid');
+const pillarStrings = document.querySelector('.mobile-pillar-lines');
+const syncPillarStrings = () => {
+  pillarStrings.style.transform = `translateX(${-pillarTrack.scrollLeft}px)`;
+};
+pillarTrack.addEventListener('scroll', syncPillarStrings, {passive: true});
+window.addEventListener('resize', syncPillarStrings);
+syncPillarStrings();
