@@ -853,4 +853,51 @@
   .mobile-pillar-lines {
     display: block;
   }
+  /* Keep the hanging strings visible even on low-density phone screens. */
+  .mobile-pillar-lines img {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .mobile-pillar-lines img:not(:first-child) {
+    height: 1px;
+  }
+  #home .navigation > a,
+  #home .catalog-menu {
+    text-align: center;
+  }
+  #home .catalog-menu > summary {
+    justify-content: center;
+  }
+  #home .catalog-menu > div {
+    text-align: center;
+  }
+  #testimonials {
+    height: auto;
+    min-height: calc(426 * var(--mobile-unit));
+    padding-bottom: calc(20 * var(--mobile-unit));
+  }
+  .review-track {
+    height: auto;
+    min-height: calc(244 * var(--mobile-unit));
+    align-items: stretch;
+  }
+  .review-card {
+    height: auto;
+    min-height: calc(224 * var(--mobile-unit));
+  }
+  #testimonials .carousel-controls {
+    margin-top: calc(12 * var(--mobile-unit));
+    height: calc(28 * var(--mobile-unit));
+  }
+  #mission {
+    height: auto;
+    min-height: calc(58 * var(--mobile-unit));
+    padding: calc(15 * var(--mobile-unit)) calc(20 * var(--mobile-unit));
+  }
+  #mission > p {
+    height: auto;
+    line-height: 1.15;
+    text-align: center;
+    text-wrap: balance;
+  }
 }
