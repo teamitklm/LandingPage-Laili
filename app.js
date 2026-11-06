@@ -1,4 +1,4 @@
-// Local interactions require no build step or external services.
+// Local interactions require no build step or external services. 
 const setPageScale = () =>
   document.documentElement.style.setProperty(
     "--page-scale",
