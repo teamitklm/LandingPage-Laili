@@ -29,7 +29,7 @@ The product showcase includes Milk Mee, Waiteu, Layali, SOP Laili, Laili Slim, a
 - A mobile header with an accessible hamburger menu, centered hero text, and the mobile-specific family photo.
 - In-page navigation and a catalogue dropdown linking to Milk Mee and Layali.
 - Scrollable product and testimonial sections with previous/next controls and position indicators.
-- WhatsApp links for partnership enquiries, consultation, and seminar registration.
+- Laili Brand registration links for partnership enquiries, consultation, and seminars.
 - Social media and footer contact links.
 - Local images, SVGs, and Montserrat font files, without temporary Figma asset URLs at runtime.
 - Keyboard focus styles, labelled carousel controls, and reduced-motion styling.
@@ -113,7 +113,7 @@ Search `index.html` for the current destinations:
 | Facebook  | `https://www.facebook.com/lailibrand`   |
 | TikTok    | `https://www.tiktok.com/@lailibrand`    |
 
-The seminar link includes a prefilled registration message. Update every occurrence when changing a destination, including the footer.
+Both partnership buttons use `https://link.lailibrand.id/GabungMitra`. The seminar button uses `https://link.lailibrand.id/IkutSeminar`. The footer contact number continues to open WhatsApp.
 
 ### Fonts
 
@@ -126,8 +126,8 @@ This is a promotional landing page. It does not include checkout, accounts, inve
 | Item                         | Current behavior                                                                                                                                |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Marketplace                  | Scrolls to the product showcase; no store is connected.                                                                                         |
-| Seminar registration         | Opens WhatsApp with a prefilled message.                                                                                                        |
-| Partnership and consultation | Open WhatsApp rather than submitting an on-site form.                                                                                           |
+| Seminar registration         | Opens `https://link.lailibrand.id/IkutSeminar`. |
+| Partnership and consultation | Both buttons open `https://link.lailibrand.id/GabungMitra`. |
 | Pillars “Learn more”         | Links to the pillars section; no separate details page exists.                                                                                  |
 | Footer utilities             | Shipping & Return, Privacy Policy, Term of Use, Wishlist, Compare, and Subscribe remain text labels without destination pages or functionality. |
 
