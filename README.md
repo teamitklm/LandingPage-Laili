@@ -8,18 +8,18 @@ Based on the [Laili Brand landing page in Figma](https://www.figma.com/design/qx
 
 ## Website sections
 
-| Section      | Content                                          | Anchor          |
-| ------------ | ------------------------------------------------ | --------------- |
-| Home         | Brand introduction and navigation                | `#home`         |
-| About        | Introduction to Laili Brand                      | `#about`        |
-| Five pillars | Family and relationship values                   | `#pillars`      |
-| Partnership  | Business opportunities and consultation          | `#partnership`  |
-| Social media | Facebook, Instagram, and TikTok                  | `#social`       |
-| Products     | Scrollable product showcase                      | `#products`     |
-| Free seminar | Seminar promotion and registration link          | `#seminar`      |
-| Testimonials | Partner and customer stories                     | `#testimonials` |
-| Mission      | “Menuju 1 Juta Keluarga Berdaya”                 | `#mission`      |
-| Footer       | Address, contact information, and utility labels | `#contact`      |
+| Section      | Content                                            | Anchor          |
+| ------------ | -------------------------------------------------- | --------------- |
+| Home         | Brand introduction and navigation                  | `#home`         |
+| About        | Introduction to Laili Brand                        | `#about`        |
+| Five pillars | Family and relationship values                     | `#pillars`      |
+| Partnership  | Business opportunities and consultation            | `#partnership`  |
+| Social media | Facebook, Instagram, and TikTok                    | `#social`       |
+| Products     | Scrollable product showcase                        | `#products`     |
+| Free seminar | Seminar promotion and registration link            | `#seminar`      |
+| Testimonials | Horizontally scrollable partner video testimonials | `#testimonials` |
+| Mission      | “Menuju 1 Juta Keluarga Berdaya”                   | `#mission`      |
+| Footer       | Address, contact information, and utility labels   | `#contact`      |
 
 The product showcase includes Milk Mee, Waiteu, Layali, SOP Laili, Laili Slim, and Laili Genwhite Series.
 
@@ -29,6 +29,7 @@ The product showcase includes Milk Mee, Waiteu, Layali, SOP Laili, Laili Slim, a
 - A mobile header with an accessible hamburger menu, centered hero text, and the mobile-specific family photo.
 - In-page navigation and a catalogue dropdown linking to Milk Mee and Layali.
 - Scrollable product and testimonial sections with previous/next controls and position indicators.
+- Video testimonial cards for Bu Siti Rahmah, Bu Sukriani, and Bu Wahyu, in Figma order. Tapping a card opens a larger player with sound, seeking, and native video controls. Closing the player stops playback.
 - Laili Brand registration links for partnership enquiries, consultation, and seminars.
 - Social media and footer contact links.
 - Local images, SVGs, and Montserrat font files, without temporary Figma asset URLs at runtime.
@@ -66,8 +67,10 @@ laili-landing-page/
 ├── mobile-art.css   # Fluid About and Seminar illustrations on phones
 ├── mobile-hero.css  # Earlier hero overrides superseded by mobile-design.css
 ├── mobile-design.css # Dedicated 412px Figma mobile design, loaded last
+├── video-testimonials.css # Video card and player styling, loaded after mobile styles
 ├── app.js           # Carousel interactions and artwork scaling
 ├── assets/          # Local PNG/SVG images and font files
+│   ├── videos/      # Three MP4 testimonials and their JPG preview images
 │   ├── Montserrat.ttf
 │   └── Montserrat-OFL.txt
 └── README.md
@@ -121,13 +124,29 @@ Montserrat is bundled locally, with its license in `assets/Montserrat-OFL.txt`. 
 
 ## Current scope and unfinished integrations
 
+### Video testimonials
+
+The testimonial section follows desktop Figma group `307:50` and mobile group `306:24`. It remains horizontally scrollable with touch, trackpad, keyboard focus, and arrow buttons. Each card has a portrait preview, the person's name, and “Mitra Laili Brand.” The complete video is shown without cropping in the playback dialog.
+
+Video files live in `assets/videos/`:
+
+| Name           | Video                | Preview              |
+| -------------- | -------------------- | -------------------- |
+| Bu Siti Rahmah | `bu-siti-rahmah.mp4` | `bu-siti-rahmah.jpg` |
+| Bu Sukriani    | `bu-sukriani.mp4`    | `bu-sukriani.jpg`    |
+| Bu Wahyu       | `bu-wahyu.mp4`       | `bu-wahyu.jpg`       |
+
+MP4 files load only after a visitor selects a card. They use H.264 video and AAC audio with the MP4 metadata at the beginning for faster startup. Bu Wahyu's larger source was compressed for easier upload; its full duration and 720p dimensions are retained. The other two videos retain their original encoded audio and video.
+
+To replace a video, replace its MP4 and JPG files, or edit the card's `data-video` and image `src` in `index.html`. Update its name in both the heading and `data-name` attribute. Keep `assets/videos/` in the same relative location when publishing. No separate video hosting service is needed. Additional caption tracks have not been authored.
+
 This is a promotional landing page. It does not include checkout, accounts, inventory management, form submission services, or payment processing.
 
 | Item                         | Current behavior                                                                                                                                |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Marketplace                  | Scrolls to the product showcase; no store is connected.                                                                                         |
-| Seminar registration         | Opens `https://link.lailibrand.id/IkutSeminar`. |
-| Partnership and consultation | Both buttons open `https://link.lailibrand.id/GabungMitra`. |
+| Seminar registration         | Opens `https://link.lailibrand.id/IkutSeminar`.                                                                                                 |
+| Partnership and consultation | Both buttons open `https://link.lailibrand.id/GabungMitra`.                                                                                     |
 | Pillars “Learn more”         | Links to the pillars section; no separate details page exists.                                                                                  |
 | Footer utilities             | Shipping & Return, Privacy Policy, Term of Use, Wishlist, Compare, and Subscribe remain text labels without destination pages or functionality. |
 

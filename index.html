@@ -8,11 +8,12 @@
       content="Kenali Laili Brand: produk keluarga, peluang kemitraan, dan seminar gratis."
     />
     <title>Laili Brand — Keluarga Berdaya</title>
-    <link rel="stylesheet" href="styles.css?v=20261106-mobile4" />
-    <link rel="stylesheet" href="layout.css?v=20261106-mobile4" />
-    <link rel="stylesheet" href="mobile-art.css?v=20261106-mobile4" />
-    <link rel="stylesheet" href="mobile-hero.css?v=20261106-mobile4" />
-    <link rel="stylesheet" href="mobile-design.css?v=20261106-mobile4" />
+    <link rel="stylesheet" href="styles.css?v=20261127-video1" />
+    <link rel="stylesheet" href="layout.css?v=20261127-video1" />
+    <link rel="stylesheet" href="mobile-art.css?v=20261127-video1" />
+    <link rel="stylesheet" href="mobile-hero.css?v=20261127-video1" />
+    <link rel="stylesheet" href="mobile-design.css?v=20261127-video1" />
+    <link rel="stylesheet" href="video-testimonials.css?v=20261127-video1" />
   </head>
   <body>
     <main
@@ -923,7 +924,7 @@
         id="testimonials"
         role="region"
         aria-label="testimonials"
-        class="layer-274"
+        class="layer-274 has-video-testimonials"
         data-node-id="1:196"
         data-name="Testimonial"
       >
@@ -950,54 +951,76 @@
                 ><source
                   media="(max-width:760px)"
                   srcset="./assets/b2524.svg" />
-                <img alt="" class="layer-315" src="./assets/b2789.svg"
+                <img
+                  alt=""
+                  class="layer-315"
+                  src="./assets/testimonial-wave.svg"
               /></picture>
             </div>
           </div>
         </div>
         <div
-          class="carousel-track review-track"
+          class="carousel-track video-testimonial-track"
           tabindex="0"
-          aria-label="Cerita mitra"
+          aria-label="Video testimoni mitra Laili Brand"
         >
-          <div class="review-card" data-node-id="1:204">
-            <p class="layer-293" data-node-id="1:206">
-              Karena Laili Brand ini komunitas ibu rumah tangga itu yang saya
-              suka, terus dari seminar-seminarnya jadi semakin sayang sama
-              keluarga. Tidak ada percekcokan antara rumah tangga. Saya semakin
-              banyak belajar dari Miss Laili dalam seminarnya.
-            </p>
-            <p class="layer-294" data-node-id="1:207">“</p>
-            <p class="layer-295" data-node-id="1:208">“</p>
-            <p class="layer-296" data-node-id="1:209">Bu Surya</p>
-            <p class="layer-297" data-node-id="1:210">Agen</p>
-          </div>
-          <div class="review-card" data-node-id="1:211">
-            <p class="layer-300" data-node-id="1:213">
-              Mengenai produk Laili Waiteu Collagen Masya Allah banget, karena
-              memang sudah menggunakan tahun lalu dan pasti halal. Aku ada
-              alergi ternyata Alhamdulillah aman. Manfaatnya kerasa karena
-              memang fungsi collagen bukan hanya kulit saja, tapi antioksidan
-              yang tinggi untuk tubuh.
-            </p>
-            <p class="layer-301" data-node-id="1:214">“</p>
-            <p class="layer-302" data-node-id="1:215">“</p>
-            <p class="layer-303" data-node-id="1:216">Risty Tagor</p>
-            <p class="layer-304" data-node-id="1:217">Distributor</p>
-          </div>
-          <div class="review-card" data-node-id="1:218">
-            <p class="layer-307" data-node-id="1:220">
-              Makin lama saya makin tahu bahwa ingredient dari produk ini sangat
-              bagus melalui kandungan kolagen yang lain dan yang biasa. Makin
-              kesini saya ikut seminar, acara ini makin saya merasa beruntung
-              karena disini kita bukan hanya mendapatkan ilmu bisnis, tetapi
-              bisnisnya selalu relatif dengan kekuasaan Allah SWT.
-            </p>
-            <p class="layer-308" data-node-id="1:221">“</p>
-            <p class="layer-309" data-node-id="1:222">“</p>
-            <p class="layer-310" data-node-id="1:223">Bu Madrim</p>
-            <p class="layer-311" data-node-id="1:224">-</p>
-          </div>
+          <article class="video-testimonial-card">
+            <button
+              type="button"
+              class="testimonial-preview"
+              data-video="./assets/videos/bu-siti-rahmah.mp4"
+              data-name="BU SITI RAHMAH"
+              aria-label="Putar video testimoni BU SITI RAHMAH"
+            >
+              <img
+                src="./assets/videos/bu-siti-rahmah.jpg"
+                alt="BU SITI RAHMAH"
+                loading="lazy"
+                width="480"
+                height="853"
+              /><span class="testimonial-play" aria-hidden="true">▶</span>
+            </button>
+            <h3>BU SITI RAHMAH</h3>
+            <p>Mitra Laili Brand</p>
+          </article>
+          <article class="video-testimonial-card">
+            <button
+              type="button"
+              class="testimonial-preview"
+              data-video="./assets/videos/bu-sukriani.mp4"
+              data-name="BU SUKRIANI"
+              aria-label="Putar video testimoni BU SUKRIANI"
+            >
+              <img
+                src="./assets/videos/bu-sukriani.jpg"
+                alt="BU SUKRIANI"
+                loading="lazy"
+                width="480"
+                height="853"
+              /><span class="testimonial-play" aria-hidden="true">▶</span>
+            </button>
+            <h3>BU SUKRIANI</h3>
+            <p>Mitra Laili Brand</p>
+          </article>
+          <article class="video-testimonial-card">
+            <button
+              type="button"
+              class="testimonial-preview"
+              data-video="./assets/videos/bu-wahyu.mp4"
+              data-name="BU WAHYU"
+              aria-label="Putar video testimoni BU WAHYU"
+            >
+              <img
+                src="./assets/videos/bu-wahyu.jpg"
+                alt="BU WAHYU"
+                loading="lazy"
+                width="480"
+                height="853"
+              /><span class="testimonial-play" aria-hidden="true">▶</span>
+            </button>
+            <h3>BU WAHYU</h3>
+            <p>Mitra Laili Brand</p>
+          </article>
         </div>
         <div class="carousel-controls">
           <button type="button" data-direction="-1" aria-label="Sebelumnya">
@@ -1154,6 +1177,25 @@
         </p>
       </div>
     </main>
-    <script src="app.js?v=20261106-mobile4"></script>
+    <dialog
+      class="testimonial-player"
+      aria-labelledby="testimonial-player-title"
+    >
+      <div class="testimonial-player-header">
+        <h2 id="testimonial-player-title">Video testimoni</h2>
+        <button
+          type="button"
+          class="testimonial-player-close"
+          aria-label="Tutup video"
+        >
+          ×
+        </button>
+      </div>
+      <video controls playsinline preload="none"></video>
+      <p class="testimonial-video-error" hidden>
+        Video tidak dapat diputar. <a href="#">Buka video</a>
+      </p>
+    </dialog>
+    <script src="app.js?v=20261127-video1"></script>
   </body>
 </html>

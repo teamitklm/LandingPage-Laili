@@ -1,4 +1,4 @@
-// Local interactions require no build step or external services. 
+// Local interactions require no build step or external services.
 const setPageScale = () =>
   document.documentElement.style.setProperty(
     "--page-scale",
@@ -82,11 +82,55 @@ document.addEventListener("keydown", (event) => {
 });
 
 // The hanging strings follow the same horizontal scroll as their photos.
-const pillarTrack = document.querySelector('.pillar-grid');
-const pillarStrings = document.querySelector('.mobile-pillar-lines');
+const pillarTrack = document.querySelector(".pillar-grid");
+const pillarStrings = document.querySelector(".mobile-pillar-lines");
 const syncPillarStrings = () => {
   pillarStrings.style.transform = `translateX(${-pillarTrack.scrollLeft}px)`;
 };
-pillarTrack.addEventListener('scroll', syncPillarStrings, {passive: true});
-window.addEventListener('resize', syncPillarStrings);
+pillarTrack.addEventListener("scroll", syncPillarStrings, { passive: true });
+window.addEventListener("resize", syncPillarStrings);
 syncPillarStrings();
+
+// Load video files only when a visitor opens a testimonial.
+const testimonialDialog = document.querySelector(".testimonial-player");
+const testimonialVideo = testimonialDialog.querySelector("video");
+const testimonialTitle = document.querySelector("#testimonial-player-title");
+const testimonialError = testimonialDialog.querySelector(
+  ".testimonial-video-error",
+);
+document.querySelectorAll(".testimonial-preview").forEach((button) => {
+  button.addEventListener("click", () => {
+    testimonialTitle.textContent = `${button.dataset.name} — Mitra Laili Brand`;
+    testimonialError.hidden = true;
+    testimonialError.querySelector("a").href = button.dataset.video;
+    testimonialVideo.poster = button.querySelector("img").getAttribute("src");
+    testimonialVideo.src = button.dataset.video;
+    testimonialDialog.showModal();
+    testimonialVideo.play().catch(() => {
+      /* Native controls remain available. */
+    });
+  });
+});
+testimonialDialog
+  .querySelector(".testimonial-player-close")
+  .addEventListener("click", () => testimonialDialog.close());
+testimonialDialog.addEventListener("click", (event) => {
+  if (event.target === testimonialDialog) {
+    const bounds = testimonialDialog.getBoundingClientRect();
+    if (
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom
+    )
+      testimonialDialog.close();
+  }
+});
+testimonialDialog.addEventListener("close", () => {
+  testimonialVideo.pause();
+  testimonialVideo.removeAttribute("src");
+  testimonialVideo.load();
+});
+testimonialVideo.addEventListener("error", () => {
+  if (testimonialVideo.hasAttribute("src")) testimonialError.hidden = false;
+});
