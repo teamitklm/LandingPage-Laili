@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/u7669874/public_html/landingpagelaili.lailibrand.id/
+    - export DEPLOYPATH=/public_html/landingpagelaili.lailibrand.id
     - /bin/cp -R * $DEPLOYPATH
